@@ -1,0 +1,19 @@
+﻿.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.venv*/
+venv/
+*.log
+.DS_Store
+
+# Local vector indexes and generated scan data
+storage/indexes/
+storage/cache/
+storage/runtime/
+
+# Streamlit
+.streamlit/secrets.toml

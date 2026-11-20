@@ -1,0 +1,151 @@
+[
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673d4"
+        },
+        "name": "Wireless Mouse",
+        "price": 25,
+        "stock": 50,
+        "tags": [
+            "electronics",
+            "wireless"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673d5"
+        },
+        "name": "Bluetooth Speaker",
+        "price": 45,
+        "stock": 30,
+        "tags": [
+            "electronics",
+            "wireless",
+            "premium"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673d6"
+        },
+        "name": "USB Cable",
+        "price": 20,
+        "stock": 100,
+        "tags": [
+            "electronics",
+            "accessories"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673d7"
+        },
+        "name": "Laptop Stand",
+        "price": 35,
+        "stock": 0,
+        "tags": [
+            "office",
+            "accessories"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673d8"
+        },
+        "name": "Gaming Keyboard",
+        "price": 75,
+        "stock": 15,
+        "tags": [
+            "electronics",
+            "gaming"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673d9"
+        },
+        "name": "Premium Headphones",
+        "price": 150,
+        "stock": 10,
+        "tags": [
+            "electronics",
+            "wireless",
+            "premium"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673da"
+        },
+        "name": "Smart Watch",
+        "price": 120,
+        "stock": 0,
+        "tags": [
+            "electronics",
+            "wearable",
+            "premium"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673db"
+        },
+        "name": "Phone Charger",
+        "price": 30,
+        "stock": 40,
+        "tags": [
+            "electronics",
+            "accessories"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673dc"
+        },
+        "name": "Webcam",
+        "price": 50,
+        "stock": 20,
+        "tags": [
+            "electronics",
+            "camera"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673dd"
+        },
+        "name": "Desk Lamp",
+        "price": 40,
+        "stock": 0,
+        "tags": [
+            "home",
+            "lighting"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673de"
+        },
+        "name": "Wireless Earbuds",
+        "price": 90,
+        "stock": 25,
+        "tags": [
+            "electronics",
+            "wireless",
+            "premium"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6aa0e1670a879436498673df"
+        },
+        "name": "External SSD",
+        "price": 180,
+        "stock": 8,
+        "tags": [
+            "electronics",
+            "storage",
+            "premium"
+        ]
+    }
+]

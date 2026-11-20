@@ -1,0 +1,638 @@
+{
+    "lab": "Lab 18 - Comparative NoSQL Threat Intelligence Capstone",
+    "generated_at": "2026-11-16T06:31:51.634822+00:00",
+    "dataset": {
+        "records_requested": 100000,
+        "records_generated": 100000,
+        "source_count": 8,
+        "sources": [
+            "AlienVault",
+            "AbuseCH",
+            "URLhaus",
+            "MalwareBazaar",
+            "ThreatFox",
+            "OpenPhish",
+            "FeodoTracker",
+            "EmergingThreats"
+        ],
+        "threat_types": [
+            "malware",
+            "phishing",
+            "botnet",
+            "ransomware",
+            "suspicious_ip"
+        ],
+        "target_count": 100,
+        "synthetic": true
+    },
+    "benchmark_methodology": {
+        "query_runs": 10,
+        "insert_rounds": 10,
+        "insert_records_per_round": 100,
+        "query_source": "AlienVault",
+        "query_target": "asset-0001",
+        "query_day": "2026-11-04"
+    },
+    "load_time_seconds": 2310.347,
+    "query_benchmarks": {
+        "threat_history_by_source": {
+            "MongoDB": {
+                "median_ms": 5.245,
+                "runs": 10,
+                "result_count": 100
+            },
+            "Cassandra": {
+                "median_ms": 25.036,
+                "runs": 10,
+                "result_count": 100
+            },
+            "Neo4j": {
+                "median_ms": 57.87,
+                "runs": 10,
+                "result_count": 100
+            }
+        },
+        "target_spread": {
+            "MongoDB": {
+                "median_ms": 14.038,
+                "runs": 10,
+                "result_count": 500
+            },
+            "Cassandra": {
+                "median_ms": 35.48,
+                "runs": 10,
+                "result_count": 500
+            },
+            "Neo4j": {
+                "median_ms": 203.123,
+                "runs": 10,
+                "result_count": 500
+            }
+        },
+        "daily_volume_by_type": {
+            "MongoDB": {
+                "median_ms": 24.864,
+                "runs": 10,
+                "result_count": 5
+            },
+            "Cassandra": {
+                "median_ms": 115.667,
+                "runs": 10,
+                "result_count": 5
+            },
+            "Neo4j": {
+                "median_ms": 211.844,
+                "runs": 10,
+                "result_count": 5
+            }
+        }
+    },
+    "insert_benchmarks": {
+        "MongoDB": {
+            "median_records_per_second": 9136.51,
+            "rounds": 10,
+            "records_per_round": 100
+        },
+        "Cassandra": {
+            "median_records_per_second": 1012.28,
+            "rounds": 10,
+            "records_per_round": 100
+        },
+        "Neo4j": {
+            "median_records_per_second": 1096.34,
+            "rounds": 10,
+            "records_per_round": 100
+        }
+    },
+    "graph_analysis": {
+        "source_activity": [
+            {
+                "source": "AbuseCH",
+                "threat_count": 12500
+            },
+            {
+                "source": "AlienVault",
+                "threat_count": 12500
+            },
+            {
+                "source": "EmergingThreats",
+                "threat_count": 12500
+            },
+            {
+                "source": "FeodoTracker",
+                "threat_count": 12500
+            },
+            {
+                "source": "MalwareBazaar",
+                "threat_count": 12500
+            },
+            {
+                "source": "OpenPhish",
+                "threat_count": 12500
+            },
+            {
+                "source": "ThreatFox",
+                "threat_count": 12500
+            },
+            {
+                "source": "URLhaus",
+                "threat_count": 12500
+            }
+        ],
+        "suspicious_source_pairs": [
+            {
+                "source_a": "AbuseCH",
+                "source_b": "OpenPhish",
+                "shared_targets": [
+                    "asset-0050",
+                    "asset-0082",
+                    "asset-0070",
+                    "asset-0022",
+                    "asset-0010",
+                    "asset-0014",
+                    "asset-0034",
+                    "asset-0074",
+                    "asset-0026",
+                    "asset-0090",
+                    "asset-0018",
+                    "asset-0054",
+                    "asset-0066",
+                    "asset-0094",
+                    "asset-0030",
+                    "asset-0002",
+                    "asset-0058",
+                    "asset-0078",
+                    "asset-0006",
+                    "asset-0042",
+                    "asset-0086",
+                    "asset-0098",
+                    "asset-0046",
+                    "asset-0038",
+                    "asset-0062"
+                ],
+                "shared_target_count": 25
+            },
+            {
+                "source_a": "AlienVault",
+                "source_b": "ThreatFox",
+                "shared_targets": [
+                    "asset-0053",
+                    "asset-0097",
+                    "asset-0041",
+                    "asset-0013",
+                    "asset-0025",
+                    "asset-0057",
+                    "asset-0061",
+                    "asset-0009",
+                    "asset-0073",
+                    "asset-0077",
+                    "asset-0085",
+                    "asset-0081",
+                    "asset-0093",
+                    "asset-0033",
+                    "asset-0021",
+                    "asset-0069",
+                    "asset-0045",
+                    "asset-0037",
+                    "asset-0001",
+                    "asset-0005",
+                    "asset-0029",
+                    "asset-0089",
+                    "asset-0049",
+                    "asset-0065",
+                    "asset-0017"
+                ],
+                "shared_target_count": 25
+            },
+            {
+                "source_a": "EmergingThreats",
+                "source_b": "MalwareBazaar",
+                "shared_targets": [
+                    "asset-0024",
+                    "asset-0016",
+                    "asset-0044",
+                    "asset-0060",
+                    "asset-0004",
+                    "asset-0064",
+                    "asset-0052",
+                    "asset-0048",
+                    "asset-0092",
+                    "asset-0076",
+                    "asset-0020",
+                    "asset-0100",
+                    "asset-0012",
+                    "asset-0036",
+                    "asset-0084",
+                    "asset-0096",
+                    "asset-0032",
+                    "asset-0068",
+                    "asset-0072",
+                    "asset-0028",
+                    "asset-0008",
+                    "asset-0040",
+                    "asset-0056",
+                    "asset-0080",
+                    "asset-0088"
+                ],
+                "shared_target_count": 25
+            },
+            {
+                "source_a": "FeodoTracker",
+                "source_b": "URLhaus",
+                "shared_targets": [
+                    "asset-0063",
+                    "asset-0083",
+                    "asset-0015",
+                    "asset-0091",
+                    "asset-0031",
+                    "asset-0003",
+                    "asset-0087",
+                    "asset-0051",
+                    "asset-0075",
+                    "asset-0059",
+                    "asset-0095",
+                    "asset-0039",
+                    "asset-0079",
+                    "asset-0071",
+                    "asset-0019",
+                    "asset-0023",
+                    "asset-0035",
+                    "asset-0047",
+                    "asset-0099",
+                    "asset-0007",
+                    "asset-0011",
+                    "asset-0055",
+                    "asset-0067",
+                    "asset-0043",
+                    "asset-0027"
+                ],
+                "shared_target_count": 25
+            }
+        ],
+        "connected_components": [
+            [
+                "AbuseCH",
+                "OpenPhish"
+            ],
+            [
+                "AlienVault",
+                "ThreatFox"
+            ],
+            [
+                "EmergingThreats",
+                "MalwareBazaar"
+            ],
+            [
+                "FeodoTracker",
+                "URLhaus"
+            ]
+        ],
+        "connected_component_count": 4,
+        "label_propagation": {
+            "algorithm": "Deterministic Label Propagation",
+            "iterations": 2,
+            "communities": {
+                "OpenPhish": [
+                    "AbuseCH",
+                    "OpenPhish"
+                ],
+                "ThreatFox": [
+                    "AlienVault",
+                    "ThreatFox"
+                ],
+                "MalwareBazaar": [
+                    "EmergingThreats",
+                    "MalwareBazaar"
+                ],
+                "URLhaus": [
+                    "FeodoTracker",
+                    "URLhaus"
+                ]
+            }
+        },
+        "mongo_evidence_cross_reference": [
+            {
+                "source_a": "AbuseCH",
+                "source_b": "OpenPhish",
+                "shared_targets": [
+                    "asset-0050",
+                    "asset-0082",
+                    "asset-0070",
+                    "asset-0022",
+                    "asset-0010",
+                    "asset-0014",
+                    "asset-0034",
+                    "asset-0074",
+                    "asset-0026",
+                    "asset-0090",
+                    "asset-0018",
+                    "asset-0054",
+                    "asset-0066",
+                    "asset-0094",
+                    "asset-0030",
+                    "asset-0002",
+                    "asset-0058",
+                    "asset-0078",
+                    "asset-0006",
+                    "asset-0042",
+                    "asset-0086",
+                    "asset-0098",
+                    "asset-0046",
+                    "asset-0038",
+                    "asset-0062"
+                ],
+                "shared_target_count": 25,
+                "mongo_matching_record_count": 25000
+            },
+            {
+                "source_a": "AlienVault",
+                "source_b": "ThreatFox",
+                "shared_targets": [
+                    "asset-0053",
+                    "asset-0097",
+                    "asset-0041",
+                    "asset-0013",
+                    "asset-0025",
+                    "asset-0057",
+                    "asset-0061",
+                    "asset-0009",
+                    "asset-0073",
+                    "asset-0077",
+                    "asset-0085",
+                    "asset-0081",
+                    "asset-0093",
+                    "asset-0033",
+                    "asset-0021",
+                    "asset-0069",
+                    "asset-0045",
+                    "asset-0037",
+                    "asset-0001",
+                    "asset-0005",
+                    "asset-0029",
+                    "asset-0089",
+                    "asset-0049",
+                    "asset-0065",
+                    "asset-0017"
+                ],
+                "shared_target_count": 25,
+                "mongo_matching_record_count": 25000
+            },
+            {
+                "source_a": "EmergingThreats",
+                "source_b": "MalwareBazaar",
+                "shared_targets": [
+                    "asset-0024",
+                    "asset-0016",
+                    "asset-0044",
+                    "asset-0060",
+                    "asset-0004",
+                    "asset-0064",
+                    "asset-0052",
+                    "asset-0048",
+                    "asset-0092",
+                    "asset-0076",
+                    "asset-0020",
+                    "asset-0100",
+                    "asset-0012",
+                    "asset-0036",
+                    "asset-0084",
+                    "asset-0096",
+                    "asset-0032",
+                    "asset-0068",
+                    "asset-0072",
+                    "asset-0028",
+                    "asset-0008",
+                    "asset-0040",
+                    "asset-0056",
+                    "asset-0080",
+                    "asset-0088"
+                ],
+                "shared_target_count": 25,
+                "mongo_matching_record_count": 25000
+            },
+            {
+                "source_a": "FeodoTracker",
+                "source_b": "URLhaus",
+                "shared_targets": [
+                    "asset-0063",
+                    "asset-0083",
+                    "asset-0015",
+                    "asset-0091",
+                    "asset-0031",
+                    "asset-0003",
+                    "asset-0087",
+                    "asset-0051",
+                    "asset-0075",
+                    "asset-0059",
+                    "asset-0095",
+                    "asset-0039",
+                    "asset-0079",
+                    "asset-0071",
+                    "asset-0019",
+                    "asset-0023",
+                    "asset-0035",
+                    "asset-0047",
+                    "asset-0099",
+                    "asset-0007",
+                    "asset-0011",
+                    "asset-0055",
+                    "asset-0067",
+                    "asset-0043",
+                    "asset-0027"
+                ],
+                "shared_target_count": 25,
+                "mongo_matching_record_count": 25000
+            }
+        ]
+    },
+    "suspicious_relationships_created": 4,
+    "false_positive_sample": [
+        {
+            "threat_id": "762869ec-86e4-584d-ab74-9d3d7100048c",
+            "from_source": "AlienVault",
+            "threat_type": "malware",
+            "target": "asset-0001",
+            "severity": "low",
+            "confidence": 0.5
+        },
+        {
+            "threat_id": "38eab303-85df-5c1e-a197-1e4ba5d7cca6",
+            "from_source": "AbuseCH",
+            "threat_type": "suspicious_ip",
+            "target": "asset-0022",
+            "severity": "medium",
+            "confidence": 0.67
+        },
+        {
+            "threat_id": "e61aa022-11d6-56b2-95cb-ae193e900368",
+            "from_source": "URLhaus",
+            "threat_type": "ransomware",
+            "target": "asset-0043",
+            "severity": "high",
+            "confidence": 0.84
+        },
+        {
+            "threat_id": "3f66125d-c9bc-561c-9cd2-7e4a473e8e21",
+            "from_source": "MalwareBazaar",
+            "threat_type": "botnet",
+            "target": "asset-0064",
+            "severity": "critical",
+            "confidence": 0.51
+        },
+        {
+            "threat_id": "a367fd93-29bd-5d20-9b93-5c0ace6dbebc",
+            "from_source": "ThreatFox",
+            "threat_type": "phishing",
+            "target": "asset-0085",
+            "severity": "low",
+            "confidence": 0.68
+        },
+        {
+            "threat_id": "4eda3ce7-1d23-5357-8d8d-1683b4c77e3f",
+            "from_source": "OpenPhish",
+            "threat_type": "malware",
+            "target": "asset-0006",
+            "severity": "medium",
+            "confidence": 0.85
+        },
+        {
+            "threat_id": "5a4af196-3b7a-52b2-91d4-283704cddeb0",
+            "from_source": "FeodoTracker",
+            "threat_type": "suspicious_ip",
+            "target": "asset-0027",
+            "severity": "high",
+            "confidence": 0.52
+        },
+        {
+            "threat_id": "ccc0393b-1cd2-53e4-8694-17e136774176",
+            "from_source": "EmergingThreats",
+            "threat_type": "ransomware",
+            "target": "asset-0048",
+            "severity": "critical",
+            "confidence": 0.69
+        },
+        {
+            "threat_id": "fed5f6c1-4e26-5c34-8495-d4cf48000c1b",
+            "from_source": "AlienVault",
+            "threat_type": "botnet",
+            "target": "asset-0069",
+            "severity": "low",
+            "confidence": 0.86
+        },
+        {
+            "threat_id": "01740d85-121b-5022-8585-a748eba46b8f",
+            "from_source": "AbuseCH",
+            "threat_type": "phishing",
+            "target": "asset-0090",
+            "severity": "medium",
+            "confidence": 0.53
+        },
+        {
+            "threat_id": "a603da5b-6fe9-5a32-b878-be50798e1c4a",
+            "from_source": "URLhaus",
+            "threat_type": "malware",
+            "target": "asset-0011",
+            "severity": "high",
+            "confidence": 0.7
+        },
+        {
+            "threat_id": "c522da71-dfc6-5dd3-9b99-daa64d3be5c0",
+            "from_source": "MalwareBazaar",
+            "threat_type": "suspicious_ip",
+            "target": "asset-0032",
+            "severity": "critical",
+            "confidence": 0.87
+        },
+        {
+            "threat_id": "a17f4dd4-5de2-522c-b6c0-ac45b14e62ea",
+            "from_source": "ThreatFox",
+            "threat_type": "ransomware",
+            "target": "asset-0053",
+            "severity": "low",
+            "confidence": 0.54
+        },
+        {
+            "threat_id": "f3dd4181-65df-518c-9376-bf614b9e6c45",
+            "from_source": "OpenPhish",
+            "threat_type": "botnet",
+            "target": "asset-0074",
+            "severity": "medium",
+            "confidence": 0.71
+        },
+        {
+            "threat_id": "5e438877-dfd5-5882-b33a-63ddaefb1472",
+            "from_source": "FeodoTracker",
+            "threat_type": "phishing",
+            "target": "asset-0095",
+            "severity": "high",
+            "confidence": 0.88
+        },
+        {
+            "threat_id": "041f8c77-0a00-5ff7-a309-0b26cc27bf6c",
+            "from_source": "EmergingThreats",
+            "threat_type": "malware",
+            "target": "asset-0016",
+            "severity": "critical",
+            "confidence": 0.55
+        },
+        {
+            "threat_id": "067e617f-2f8f-5ec0-9e38-7fea07a96378",
+            "from_source": "AlienVault",
+            "threat_type": "suspicious_ip",
+            "target": "asset-0037",
+            "severity": "low",
+            "confidence": 0.72
+        },
+        {
+            "threat_id": "b98c3b1b-096e-5fb7-a8fc-2d55ab0b1dba",
+            "from_source": "AbuseCH",
+            "threat_type": "ransomware",
+            "target": "asset-0058",
+            "severity": "medium",
+            "confidence": 0.89
+        },
+        {
+            "threat_id": "e6ea3db5-7242-5b21-853b-b235c8f02bc2",
+            "from_source": "URLhaus",
+            "threat_type": "botnet",
+            "target": "asset-0079",
+            "severity": "high",
+            "confidence": 0.56
+        },
+        {
+            "threat_id": "3361d698-1b02-5365-8dc7-1e9309704b92",
+            "from_source": "MalwareBazaar",
+            "threat_type": "phishing",
+            "target": "asset-0100",
+            "severity": "critical",
+            "confidence": 0.73
+        }
+    ],
+    "verification": {
+        "expected_dataset_records": 100000,
+        "MongoDB": {
+            "full_threats": 100000,
+            "source_summary_documents": 8,
+            "expected_full_threats": 100000,
+            "verified": true
+        },
+        "Cassandra": {
+            "table_counts": {
+                "threats_by_source": 100000,
+                "threats_by_type": 100000,
+                "threats_by_target": 100000,
+                "threats_by_day": 100000
+            },
+            "expected_records_per_table": 100000,
+            "verified": true
+        },
+        "Neo4j": {
+            "threat_nodes": 100000,
+            "source_nodes": 8,
+            "expected_threat_nodes": 100000,
+            "expected_source_nodes": 8,
+            "verified": true
+        }
+    },
+    "resume_mode": false
+}

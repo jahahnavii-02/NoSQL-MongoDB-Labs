@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883be"
+  },
+  "customer": "Aarav",
+  "product_id": 101,
+  "quantity": 1,
+  "order_date": "2026-01-05"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883bf"
+  },
+  "customer": "Priya",
+  "product_id": 102,
+  "quantity": 2,
+  "order_date": "2026-01-12"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883c0"
+  },
+  "customer": "Rahul",
+  "product_id": 103,
+  "quantity": 1,
+  "order_date": "2026-01-20"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883c1"
+  },
+  "customer": "Sneha",
+  "product_id": 104,
+  "quantity": 2,
+  "order_date": "2026-01-25"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883c2"
+  },
+  "customer": "Vikram",
+  "product_id": 105,
+  "quantity": 1,
+  "order_date": "2026-02-03"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883c3"
+  },
+  "customer": "Aarav",
+  "product_id": 103,
+  "quantity": 2,
+  "order_date": "2026-02-10"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883c4"
+  },
+  "customer": "Priya",
+  "product_id": 101,
+  "quantity": 1,
+  "order_date": "2026-02-15"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883c5"
+  },
+  "customer": "Rahul",
+  "product_id": 102,
+  "quantity": 3,
+  "order_date": "2026-02-22"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883c6"
+  },
+  "customer": "Sneha",
+  "product_id": 101,
+  "quantity": 1,
+  "order_date": "2026-03-02"
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883c7"
+  },
+  "customer": "Vikram",
+  "product_id": 104,
+  "quantity": 1,
+  "order_date": "2026-03-08"
+}]

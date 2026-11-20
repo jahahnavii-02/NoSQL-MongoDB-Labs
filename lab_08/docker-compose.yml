@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mongo-primary:
+    image: mongo:7.0
+    command: mongod --replSet rs0 --bind_ip_all
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  mongo-secondary1:
+    image: mongo:7.0
+    command: mongod --replSet rs0 --bind_ip_all
+    ports:
+      - "27018:27017"
+
+  mongo-secondary2:
+    image: mongo:7.0
+    command: mongod --replSet rs0 --bind_ip_all
+    ports:
+      - "27019:27017"
+
+  mongo-arbiter:
+    image: mongo:7.0
+    command: mongod --replSet rs0 --bind_ip_all
+
+volumes:
+  mongo-data:

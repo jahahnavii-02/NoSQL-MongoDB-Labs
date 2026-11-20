@@ -1,0 +1,188 @@
+[
+  {
+    "index": "HNSW",
+    "parameters": {
+      "M": 16,
+      "efConstruction": 100,
+      "efSearch": 64
+    },
+    "build_time_seconds": 3.426023,
+    "mean_latency_ms": 2.916918,
+    "p95_latency_ms": 1.682914,
+    "mean_recall_at_20": 0.598,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "HNSW",
+    "parameters": {
+      "M": 16,
+      "efConstruction": 200,
+      "efSearch": 64
+    },
+    "build_time_seconds": 4.351224,
+    "mean_latency_ms": 1.229867,
+    "p95_latency_ms": 4.10424,
+    "mean_recall_at_20": 0.5985,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "HNSW",
+    "parameters": {
+      "M": 32,
+      "efConstruction": 100,
+      "efSearch": 64
+    },
+    "build_time_seconds": 5.126626,
+    "mean_latency_ms": 0.970849,
+    "p95_latency_ms": 1.451048,
+    "mean_recall_at_20": 0.8035,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "HNSW",
+    "parameters": {
+      "M": 32,
+      "efConstruction": 200,
+      "efSearch": 64
+    },
+    "build_time_seconds": 5.87882,
+    "mean_latency_ms": 1.296247,
+    "p95_latency_ms": 1.500224,
+    "mean_recall_at_20": 0.815,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 50,
+      "nprobe": 2
+    },
+    "build_time_seconds": 0.429617,
+    "mean_latency_ms": 0.097254,
+    "p95_latency_ms": 0.143453,
+    "mean_recall_at_20": 0.0995,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 50,
+      "nprobe": 10
+    },
+    "build_time_seconds": 0.429617,
+    "mean_latency_ms": 0.275323,
+    "p95_latency_ms": 0.401756,
+    "mean_recall_at_20": 0.3555,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 50,
+      "nprobe": 50
+    },
+    "build_time_seconds": 0.429617,
+    "mean_latency_ms": 1.10069,
+    "p95_latency_ms": 1.428545,
+    "mean_recall_at_20": 1.0,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 100,
+      "nprobe": 5
+    },
+    "build_time_seconds": 0.321018,
+    "mean_latency_ms": 0.107929,
+    "p95_latency_ms": 0.200585,
+    "mean_recall_at_20": 0.141,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 100,
+      "nprobe": 20
+    },
+    "build_time_seconds": 0.321018,
+    "mean_latency_ms": 0.455042,
+    "p95_latency_ms": 0.924616,
+    "mean_recall_at_20": 0.394,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 100,
+      "nprobe": 100
+    },
+    "build_time_seconds": 0.321018,
+    "mean_latency_ms": 1.181307,
+    "p95_latency_ms": 1.480966,
+    "mean_recall_at_20": 1.0,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 200,
+      "nprobe": 10
+    },
+    "build_time_seconds": 0.335155,
+    "mean_latency_ms": 0.205221,
+    "p95_latency_ms": 0.582718,
+    "mean_recall_at_20": 0.185,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 200,
+      "nprobe": 40
+    },
+    "build_time_seconds": 0.335155,
+    "mean_latency_ms": 0.340156,
+    "p95_latency_ms": 0.453222,
+    "mean_recall_at_20": 0.4715,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  },
+  {
+    "index": "IVF",
+    "parameters": {
+      "nlist": 200,
+      "nprobe": 200
+    },
+    "build_time_seconds": 0.335155,
+    "mean_latency_ms": 1.297199,
+    "p95_latency_ms": 1.837723,
+    "mean_recall_at_20": 1.0,
+    "queries": 100,
+    "documents": 5000,
+    "dimensions": 384
+  }
+]

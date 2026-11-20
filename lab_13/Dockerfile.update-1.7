@@ -1,0 +1,8 @@
+﻿FROM jahnavii15/integrated-nosql-labs:1.7
+
+WORKDIR /app
+
+COPY lab13.1-replica-set/docker-compose.yml /app/lab13/lab13.1-replica-set/docker-compose.yml
+COPY README.update-1.7.md /app/README.md
+
+CMD ["sh", "-c", "echo 'Integrated NoSQL Labs 1-13'; echo 'Lab 13 includes replica set, failover, Kubernetes and Prometheus exporter'; echo 'Read /app/README.md'; exec tail -f /dev/null"]

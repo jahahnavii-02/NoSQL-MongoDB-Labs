@@ -1,0 +1,15 @@
+Workload,Database,Median Latency (ms),Runs
+threat_history_by_source,MongoDB,5.245,10
+threat_history_by_source,Cassandra,25.036,10
+threat_history_by_source,Neo4j,57.87,10
+target_spread,MongoDB,14.038,10
+target_spread,Cassandra,35.48,10
+target_spread,Neo4j,203.123,10
+daily_volume_by_type,MongoDB,24.864,10
+daily_volume_by_type,Cassandra,115.667,10
+daily_volume_by_type,Neo4j,211.844,10
+
+Insert Benchmark,Database,Median Records Per Second,Rounds
+Insert Benchmark,MongoDB,9136.51,10
+Insert Benchmark,Cassandra,1012.28,10
+Insert Benchmark,Neo4j,1096.34,10

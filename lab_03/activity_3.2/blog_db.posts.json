@@ -1,0 +1,52 @@
+[
+  {
+    "post_id": 1,
+    "title": "Introduction to MongoDB",
+    "author": "Jahnavi",
+    "content": "MongoDB is a NoSQL database that stores data in flexible documents.",
+    "media": {
+      "image": "mongodb.png",
+      "video": "mongodb_intro.mp4"
+    }
+  },
+  {
+    "post_id": 2,
+    "title": "Understanding NoSQL Databases",
+    "author": "Rahul",
+    "content": "NoSQL databases are useful for flexible and scalable data storage.",
+    "media": {
+      "image": "nosql.png",
+      "video": "nosql_intro.mp4"
+    }
+  },
+  {
+    "post_id": 3,
+    "title": "MongoDB CRUD Operations",
+    "author": "Priya",
+    "content": "CRUD operations are used to create, read, update, and delete documents.",
+    "media": {
+      "image": "crud.png",
+      "video": "crud_demo.mp4"
+    }
+  },
+  {
+    "post_id": 4,
+    "title": "Embedded vs Referenced Documents",
+    "author": "Arjun",
+    "content": "MongoDB supports both embedded and referenced document designs.",
+    "media": {
+      "image": "embedded.png",
+      "video": "referenced_demo.mp4"
+    }
+  },
+  {
+    "post_id": 5,
+    "title": "MongoDB Aggregation",
+    "author": "Sneha",
+    "content": "Aggregation pipelines are used to process and analyze MongoDB documents.",
+    "media": {
+      "image": "aggregation.png",
+      "video": "aggregation_demo.mp4"
+    }
+  }
+]

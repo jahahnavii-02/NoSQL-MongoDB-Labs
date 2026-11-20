@@ -1,0 +1,21 @@
+[{
+  "_id": "SRC001",
+  "name": "CTI Digest",
+  "organization": "Cyber Threat Intelligence Digest",
+  "url": "https://ctidigest.com/",
+  "type": "Threat Intelligence"
+},
+{
+  "_id": "SRC002",
+  "name": "Security Research Source",
+  "organization": "Security Research Group",
+  "url": "https://example.com/",
+  "type": "Security Research"
+},
+{
+  "_id": "SRC003",
+  "name": "Threat Intelligence Report",
+  "organization": "Cyber Security Organization",
+  "url": "https://example.org/",
+  "type": "Annual Report"
+}]

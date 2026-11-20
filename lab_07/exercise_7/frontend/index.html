@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sentinel CTI | Cyber Threat Intelligence</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">S</div>
+
+            <div>
+                <h2>SENTINEL</h2>
+                <span>CTI PLATFORM</span>
+            </div>
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active"
+                    onclick="showSection('dashboard')">
+                <span>◈</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('threats')">
+                <span>⚠</span>
+                Threat Intelligence
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('search')">
+                <span>⌕</span>
+                Threat Search
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('classification')">
+                <span>◉</span>
+                Classification
+            </button>
+
+        </nav>
+
+
+        <div class="system-status">
+
+            <div class="status-dot"></div>
+
+            <div>
+                <strong>System Online</strong>
+                <small>MongoDB Connected</small>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <span class="breadcrumb">
+                    SECURITY OPERATIONS
+                </span>
+
+                <h1 id="pageTitle">
+                    Threat Intelligence Dashboard
+                </h1>
+            </div>
+
+
+            <div class="top-status">
+
+                <span class="live-dot"></span>
+
+                LIVE MONITORING
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard"
+                 class="page-section active-section">
+
+
+            <div class="hero">
+
+                <div>
+
+                    <p class="eyebrow">
+                        CYBER THREAT INTELLIGENCE
+                    </p>
+
+                    <h2>
+                        Monitor. Investigate.<br>
+                        <span>Protect.</span>
+                    </h2>
+
+                    <p class="hero-text">
+                        Centralized threat intelligence for
+                        monitoring malicious activity,
+                        indicators and emerging cyber threats.
+                    </p>
+
+                </div>
+
+                <div class="hero-symbol">
+                    ◉
+                </div>
+
+            </div>
+
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">⚠</div>
+
+                    <div>
+                        <span>Total Threats</span>
+                        <strong id="totalThreats">--</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card critical">
+
+                    <div class="stat-icon">!</div>
+
+                    <div>
+                        <span>Critical Threats</span>
+                        <strong id="criticalThreats">--</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">◎</div>
+
+                    <div>
+                        <span>Indicators</span>
+                        <strong id="totalIndicators">--</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">◫</div>
+
+                    <div>
+                        <span>Sources</span>
+                        <strong id="totalSources">--</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SEARCH -->
+
+            <div class="search-panel">
+
+                <div class="search-title">
+
+                    <span>⌕</span>
+
+                    <div>
+                        <h3>Search Threat Intelligence</h3>
+
+                        <p>
+                            Search threats, malware,
+                            ransomware, phishing and indicators.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="Search threat intelligence..."
+                        onkeydown="searchOnEnter(event)"
+                    >
+
+                    <button onclick="performSearch()">
+                        SEARCH
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RECENT THREATS -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        INTELLIGENCE FEED
+                    </span>
+
+                    <h2>Recent Threats</h2>
+
+                </div>
+
+                <button class="text-button"
+                        onclick="showSection('threats')">
+                    View all →
+                </button>
+
+            </div>
+
+
+            <div id="recentThreats"
+                 class="threat-grid">
+
+                <div class="loading">
+                    Loading intelligence...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= THREATS ================= -->
+
+        <section id="threats"
+                 class="page-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        THREAT INTELLIGENCE
+                    </span>
+
+                    <h2>Threat Database</h2>
+
+                </div>
+
+            </div>
+
+
+            <div id="allThreats"
+                 class="threat-grid">
+
+                <div class="loading">
+                    Loading threats...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <section id="search"
+                 class="page-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        INVESTIGATION
+                    </span>
+
+                    <h2>Threat Search</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="search-panel">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Enter threat, malware, category or IOC..."
+                        onkeydown="searchPageEnter(event)"
+                    >
+
+                    <button onclick="performAdvancedSearch()">
+                        SEARCH
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="searchResults">
+
+                <div class="empty-state">
+                    Enter a search query to investigate threats.
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= CLASSIFICATION ================= -->
+
+        <section id="classification"
+                 class="page-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        THREAT ANALYSIS
+                    </span>
+
+                    <h2>Threat Classification</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="classification-grid">
+
+                <div class="classification-card">
+
+                    <div class="classification-number">
+                        R
+                    </div>
+
+                    <h3>Ransomware</h3>
+
+                    <strong id="ransomwareCount">
+                        --
+                    </strong>
+
+                    <span>Detected threats</span>
+
+                </div>
+
+
+                <div class="classification-card">
+
+                    <div class="classification-number">
+                        M
+                    </div>
+
+                    <h3>Malware</h3>
+
+                    <strong id="malwareCount">
+                        --
+                    </strong>
+
+                    <span>Detected threats</span>
+
+                </div>
+
+
+                <div class="classification-card">
+
+                    <div class="classification-number">
+                        P
+                    </div>
+
+                    <h3>Phishing</h3>
+
+                    <strong id="phishingCount">
+                        --
+                    </strong>
+
+                    <span>Detected threats</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="classification-info">
+
+                <h3>How classification works</h3>
+
+                <p>
+                    Threats are classified using stored
+                    category, severity and confidence
+                    information from the MongoDB
+                    Cyber-Threat Intelligence dataset.
+                </p>
+
+                <div class="classification-tags">
+
+                    <span>Malware</span>
+                    <span>Ransomware</span>
+                    <span>Phishing</span>
+                    <span>Critical</span>
+                    <span>High</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= THREAT MODAL ================= -->
+
+    <div id="threatModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-button"
+                    onclick="closeModal()">
+                ×
+            </button>
+
+            <div id="modalContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

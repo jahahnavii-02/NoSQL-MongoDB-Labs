@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883b8"
+  },
+  "product_id": 101,
+  "name": "Laptop",
+  "category": "Electronics",
+  "base_price": 750
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883b9"
+  },
+  "product_id": 102,
+  "name": "Mouse",
+  "category": "Accessories",
+  "base_price": 25
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883ba"
+  },
+  "product_id": 103,
+  "name": "Keyboard",
+  "category": "Accessories",
+  "base_price": 60
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883bb"
+  },
+  "product_id": 104,
+  "name": "Monitor",
+  "category": "Electronics",
+  "base_price": 220
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883bc"
+  },
+  "product_id": 105,
+  "name": "Headphones",
+  "category": "Audio",
+  "base_price": 120
+},
+{
+  "_id": {
+    "$oid": "6ac7cca52f76ab56cd0883bd"
+  },
+  "product_id": 106,
+  "name": "Webcam",
+  "category": "Accessories",
+  "base_price": 90
+}]

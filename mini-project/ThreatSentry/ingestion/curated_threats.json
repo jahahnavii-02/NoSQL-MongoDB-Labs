@@ -1,0 +1,481 @@
+[
+ {
+  "threat_id": "CUR-LOG4SHELL",
+  "external_id": "CVE-2021-44228",
+  "name": "Log4Shell - Apache Log4j JNDI remote code execution",
+  "description": "Log4j 2 evaluates JNDI lookups in logged strings, letting attackers load remote code. Still scanned and exploited years later, with new obfuscation variants.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux",
+   "Windows",
+   "macOS"
+  ],
+  "severity": "Critical",
+  "status": "Evolving",
+  "mitigation": [
+   "Upgrade Log4j to 2.17.1 or later",
+   "If upgrade is impossible, remove the JndiLookup class from the log4j-core jar",
+   "Block outbound LDAP/RMI from servers",
+   "Inventory all Java apps and bundled jars"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-SUDO-BARON-SAMEDIT",
+  "external_id": "CVE-2021-3156",
+  "name": "Baron Samedit - sudo heap overflow to root",
+  "description": "Heap-based buffer overflow in sudo (before 1.9.5p2) lets any local user gain root.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux",
+   "macOS"
+  ],
+  "severity": "High",
+  "status": "Resolved",
+  "mitigation": [
+   "Upgrade sudo to 1.9.5p2 or later",
+   "Verify with: sudo --version"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-PWNKIT",
+  "external_id": "CVE-2021-4034",
+  "name": "PwnKit - polkit pkexec local privilege escalation",
+  "description": "pkexec mishandles empty argument lists, giving local users root on most Linux distributions.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux"
+  ],
+  "severity": "High",
+  "status": "Resolved",
+  "mitigation": [
+   "Update the polkit package",
+   "Temporary workaround: chmod 0755 /usr/bin/pkexec"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-DIRTY-PIPE",
+  "external_id": "CVE-2022-0847",
+  "name": "Dirty Pipe - Linux kernel arbitrary file overwrite",
+  "description": "Flaw in pipe buffer handling (kernel 5.8+) lets unprivileged users overwrite read-only files and escalate to root. Fixed in 5.16.11, 5.15.25, 5.10.102.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux",
+   "Android"
+  ],
+  "severity": "High",
+  "status": "Resolved",
+  "mitigation": [
+   "Update to a patched kernel and reboot",
+   "Verify with: uname -r"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-DIRTY-COW",
+  "external_id": "CVE-2016-5195",
+  "name": "Dirty COW - Linux copy-on-write race condition",
+  "description": "Race in the kernel memory subsystem allowed local privilege escalation; exploited in the wild.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux",
+   "Android"
+  ],
+  "severity": "High",
+  "status": "Resolved",
+  "mitigation": [
+   "Apply the kernel patch for your distribution and reboot"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-REGRESSHION",
+  "external_id": "CVE-2024-6387",
+  "name": "regreSSHion - OpenSSH sshd signal handler race",
+  "description": "Race condition in OpenSSH server 8.5p1-9.7p1 can allow unauthenticated remote code execution as root on glibc systems. Fixed in 9.8p1.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux"
+  ],
+  "severity": "High",
+  "status": "Resolved",
+  "mitigation": [
+   "Upgrade OpenSSH to 9.8p1 or your distro's patched build",
+   "Workaround: set LoginGraceTime 0 in sshd_config (risk: connection exhaustion)",
+   "Restrict SSH access with firewall rules"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-XZ-BACKDOOR",
+  "external_id": "CVE-2024-3094",
+  "name": "XZ Utils supply-chain backdoor",
+  "description": "Malicious code in xz/liblzma 5.6.0 and 5.6.1 tarballs could compromise sshd on affected systemd-based distributions.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux"
+  ],
+  "severity": "Critical",
+  "status": "Resolved",
+  "mitigation": [
+   "Downgrade or update to a clean xz release (5.4.x or distro-fixed build)",
+   "Check version: xz --version"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-HEARTBLEED",
+  "external_id": "CVE-2014-0160",
+  "name": "Heartbleed - OpenSSL memory disclosure",
+  "description": "Missing bounds check in the TLS heartbeat extension leaked server memory including private keys.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux"
+  ],
+  "severity": "High",
+  "status": "Resolved",
+  "mitigation": [
+   "Upgrade OpenSSL to a fixed version",
+   "Regenerate private keys and certificates",
+   "Rotate user passwords and session secrets"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-ETERNALBLUE",
+  "external_id": "CVE-2017-0144",
+  "name": "EternalBlue - SMBv1 remote code execution",
+  "description": "SMBv1 flaw exploited by WannaCry and NotPetya; unpatched or legacy systems remain targets.",
+  "platform": "Windows",
+  "platforms": [
+   "Windows"
+  ],
+  "severity": "Critical",
+  "status": "Resolved",
+  "mitigation": [
+   "Install Microsoft update MS17-010",
+   "Disable SMBv1: Set-SmbServerConfiguration -EnableSMB1Protocol $false",
+   "Block TCP 445 at the perimeter"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-PRINTNIGHTMARE",
+  "external_id": "CVE-2021-34527",
+  "name": "PrintNightmare - Windows Print Spooler RCE",
+  "description": "Print Spooler allows remote code execution and privilege escalation via driver installation.",
+  "platform": "Windows",
+  "platforms": [
+   "Windows"
+  ],
+  "severity": "Critical",
+  "status": "Resolved",
+  "mitigation": [
+   "Install the July 2021 or later cumulative update",
+   "Disable Print Spooler on servers that do not print",
+   "Restrict Point and Print policies"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-FOLLINA",
+  "external_id": "CVE-2022-30190",
+  "name": "Follina - Microsoft Support Diagnostic Tool RCE",
+  "description": "Office documents can invoke msdt.exe through a URL protocol to run code without macros.",
+  "platform": "Windows",
+  "platforms": [
+   "Windows"
+  ],
+  "severity": "High",
+  "status": "Resolved",
+  "mitigation": [
+   "Install the June 2022 or later security update",
+   "Workaround: delete the ms-msdt registry protocol handler"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-ZEROLOGON",
+  "external_id": "CVE-2020-1472",
+  "name": "Zerologon - Netlogon privilege escalation",
+  "description": "Cryptographic flaw in Netlogon lets an attacker take over a domain controller.",
+  "platform": "Windows",
+  "platforms": [
+   "Windows"
+  ],
+  "severity": "Critical",
+  "status": "Resolved",
+  "mitigation": [
+   "Install August 2020 update and the February 2021 enforcement update",
+   "Monitor Netlogon event IDs 5827-5831"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-TCPIP-IPV6-RCE",
+  "external_id": "CVE-2024-38063",
+  "name": "Windows TCP/IP IPv6 remote code execution",
+  "description": "Specially crafted IPv6 packets can trigger zero-click RCE on Windows 10, 11 and Server.",
+  "platform": "Windows",
+  "platforms": [
+   "Windows"
+  ],
+  "severity": "Critical",
+  "status": "Resolved",
+  "mitigation": [
+   "Install the August 2024 security update",
+   "If IPv6 is unneeded, disable it on the interface"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-BYOVD",
+  "external_id": null,
+  "name": "Bring Your Own Vulnerable Driver (BYOVD) attacks",
+  "description": "Attackers load legitimately signed but vulnerable kernel drivers to disable EDR and gain kernel access; new drivers are abused continuously.",
+  "platform": "Windows",
+  "platforms": [
+   "Windows"
+  ],
+  "severity": "High",
+  "status": "Evolving",
+  "mitigation": [
+   "Enable HVCI / memory integrity",
+   "Enable the Microsoft vulnerable driver blocklist",
+   "Use WDAC/App Control to allow only needed drivers"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-INFOSTEALERS-WIN",
+  "external_id": null,
+  "name": "Infostealer malware harvesting browser credentials and tokens",
+  "description": "Commodity stealers delivered by malvertising and cracked software steal saved passwords, cookies and session tokens.",
+  "platform": "Windows",
+  "platforms": [
+   "Windows"
+  ],
+  "severity": "High",
+  "status": "Active",
+  "mitigation": [
+   "Use a password manager instead of browser storage",
+   "Enable MFA with phishing-resistant keys",
+   "Keep Defender and SmartScreen enabled",
+   "Revoke sessions after any suspected infection"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-FORCEDENTRY",
+  "external_id": "CVE-2021-30860",
+  "name": "FORCEDENTRY - zero-click iMessage CoreGraphics exploit",
+  "description": "Malicious PDF-in-GIF processed by CoreGraphics gave zero-click code execution; used by mercenary spyware. Fixed in iOS 14.8 and macOS 11.6.",
+  "platform": "iOS",
+  "platforms": [
+   "iOS",
+   "macOS"
+  ],
+  "severity": "Critical",
+  "status": "Resolved",
+  "mitigation": [
+   "Update iOS/macOS to the latest version",
+   "Enable Lockdown Mode for high-risk users"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-BLASTPASS",
+  "external_id": "CVE-2023-41064",
+  "name": "BLASTPASS - ImageIO buffer overflow zero-click chain",
+  "description": "Malicious image attachments exploited ImageIO (with CVE-2023-41061 in Wallet). Fixed in iOS 16.6.1 and macOS 13.5.2.",
+  "platform": "iOS",
+  "platforms": [
+   "iOS",
+   "macOS"
+  ],
+  "severity": "Critical",
+  "status": "Resolved",
+  "mitigation": [
+   "Update to iOS 16.6.1+ / macOS 13.5.2+ or later",
+   "Enable Lockdown Mode if targeted"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-IOS-SPYWARE",
+  "external_id": null,
+  "name": "Mercenary spyware zero-click chains on iPhone",
+  "description": "Commercial spyware vendors keep shipping new zero-click exploit chains against messaging and image-parsing components.",
+  "platform": "iOS",
+  "platforms": [
+   "iOS"
+  ],
+  "severity": "Critical",
+  "status": "Evolving",
+  "mitigation": [
+   "Install iOS updates immediately",
+   "Enable Lockdown Mode",
+   "Reboot regularly",
+   "Report suspected compromise to Apple/Access Now"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-MACOS-STEALERS",
+  "external_id": null,
+  "name": "macOS infostealers (e.g. Atomic Stealer) via fake installers and paste-and-run lures",
+  "description": "Malware distributed through cracked apps, malvertising and fake 'fix' instructions that make users paste Terminal commands.",
+  "platform": "macOS",
+  "platforms": [
+   "macOS"
+  ],
+  "severity": "High",
+  "status": "Active",
+  "mitigation": [
+   "Install only from the App Store or notarized developers",
+   "Never paste Terminal commands from websites",
+   "Keep Gatekeeper and XProtect enabled",
+   "Use a password manager"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-STAGEFRIGHT",
+  "external_id": "CVE-2015-1538",
+  "name": "Stagefright - Android media library remote code execution",
+  "description": "Integer overflow in libstagefright allowed code execution via crafted MMS media; fixed in 2015 security patches.",
+  "platform": "Android",
+  "platforms": [
+   "Android"
+  ],
+  "severity": "Critical",
+  "status": "Resolved",
+  "mitigation": [
+   "Install Android security patch level 2015-08-01 or newer",
+   "Replace devices that no longer receive updates"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-ANDROID-BANKING-TROJANS",
+  "external_id": null,
+  "name": "Android banking trojans abusing Accessibility services",
+  "description": "Sideloaded apps request Accessibility permission to read screens, intercept OTPs and perform overlay fraud.",
+  "platform": "Android",
+  "platforms": [
+   "Android"
+  ],
+  "severity": "High",
+  "status": "Active",
+  "mitigation": [
+   "Install apps only from Google Play",
+   "Never grant Accessibility to unknown apps",
+   "Keep Play Protect enabled",
+   "Review special app access in Settings"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-ANDROID-PREINSTALLED",
+  "external_id": null,
+  "name": "Pre-installed malware on low-cost Android devices",
+  "description": "Some cheap Android devices ship with backdoored firmware that turns them into proxy or fraud botnet nodes.",
+  "platform": "Android",
+  "platforms": [
+   "Android"
+  ],
+  "severity": "High",
+  "status": "Evolving",
+  "mitigation": [
+   "Buy certified devices from reputable vendors",
+   "Check Play Protect certification status",
+   "Factory-reset and replace suspicious devices"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-PQC-HARVEST",
+  "external_id": null,
+  "name": "Harvest-now-decrypt-later: quantum threat to RSA and ECC",
+  "description": "Adversaries store encrypted traffic today to decrypt it once quantum computers can break RSA/ECC key exchange.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux",
+   "Windows",
+   "macOS",
+   "Android",
+   "iOS"
+  ],
+  "severity": "Medium",
+  "status": "Anticipated",
+  "mitigation": [
+   "Inventory where RSA/ECC is used",
+   "Plan migration to NIST post-quantum standards (ML-KEM, ML-DSA)",
+   "Enable hybrid post-quantum TLS where supported"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-AI-PHISHING",
+  "external_id": null,
+  "name": "AI-generated phishing and voice-cloning social engineering",
+  "description": "LLM-written lures and cloned voices make phishing and vishing far more convincing and scalable.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux",
+   "Windows",
+   "macOS",
+   "Android",
+   "iOS"
+  ],
+  "severity": "High",
+  "status": "Evolving",
+  "mitigation": [
+   "Use phishing-resistant MFA (FIDO2 passkeys)",
+   "Verify payment or credential requests out-of-band",
+   "Run updated awareness training"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-SUPPLY-CHAIN-REGISTRIES",
+  "external_id": null,
+  "name": "Package registry supply-chain attacks (typosquatting, malicious updates)",
+  "description": "Malicious packages on npm, PyPI and similar registries steal secrets or add backdoors at install time.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux",
+   "Windows",
+   "macOS"
+  ],
+  "severity": "High",
+  "status": "Evolving",
+  "mitigation": [
+   "Pin and hash-lock dependencies",
+   "Use an internal proxy/allow-list",
+   "Run SCA and review new dependencies",
+   "Disable install scripts where possible"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ },
+ {
+  "threat_id": "CUR-EBPF-ROOTKITS",
+  "external_id": null,
+  "name": "eBPF-based rootkits on Linux",
+  "description": "Attackers are expected to abuse eBPF for stealthy persistence, hiding processes and network traffic from user-space tools.",
+  "platform": "Linux",
+  "platforms": [
+   "Linux"
+  ],
+  "severity": "Medium",
+  "status": "Anticipated",
+  "mitigation": [
+   "Restrict unprivileged eBPF: kernel.unprivileged_bpf_disabled=1",
+   "Monitor bpf() syscall use",
+   "Use kernel lockdown and signed modules"
+  ],
+  "source": "Curated from public advisories (demo set)"
+ }
+]

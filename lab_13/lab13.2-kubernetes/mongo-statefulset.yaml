@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo
+  namespace: lab13
+spec:
+  serviceName: mongo
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: mongodb
+
+  template:
+    metadata:
+      labels:
+        app: mongodb
+
+    spec:
+      initContainers:
+        - name: setup-keyfile
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - |
+              cp /source/keyfile /shared/keyfile
+              chown 999:999 /shared/keyfile
+              chmod 400 /shared/keyfile
+              echo "Shared MongoDB keyfile prepared"
+          volumeMounts:
+            - name: keyfile-secret
+              mountPath: /source
+              readOnly: true
+            - name: keyfile-work
+              mountPath: /shared
+
+      containers:
+        - name: mongodb
+          image: mongo:7.0
+          args:
+            - "--replSet"
+            - "rs0"
+            - "--bind_ip_all"
+            - "--keyFile"
+            - "/etc/mongo-keyfile/keyfile"
+            - "--wiredTigerCacheSizeGB"
+            - "0.25"
+
+          ports:
+            - containerPort: 27017
+              name: mongodb
+
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "200m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
+          volumeMounts:
+            - name: mongo-data
+              mountPath: /data/db
+            - name: keyfile-work
+              mountPath: /etc/mongo-keyfile
+              readOnly: true
+
+      volumes:
+        - name: keyfile-secret
+          secret:
+            secretName: mongo-keyfile
+        - name: keyfile-work
+          emptyDir: {}
+
+  volumeClaimTemplates:
+    - metadata:
+        name: mongo-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: standard
+        resources:
+          requests:
+            storage: 1Gi

@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "6a906c6af45b35e78c4d7afd"
+  },
+  "data_domain": "Raw Post Storage",
+  "family": "Wide-Column",
+  "database": "Apache Cassandra",
+  "reason": "High write throughput and time-series access pattern"
+},
+{
+  "_id": {
+    "$oid": "6a906c6af45b35e78c4d7afe"
+  },
+  "data_domain": "Real-Time Analytics",
+  "family": "Key-Value",
+  "database": "Redis",
+  "reason": "Fast counters and trending-topic caches"
+}]

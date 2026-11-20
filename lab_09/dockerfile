@@ -1,0 +1,15 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY lab9_1/ ./lab9_1/
+COPY lab9_2/ ./lab9_2/
+COPY README.md ./README.md
+
+ENV PYTHONUNBUFFERED=1
+
+# Run either lab script by supplying its path after the image name.
+ENTRYPOINT ["python"]

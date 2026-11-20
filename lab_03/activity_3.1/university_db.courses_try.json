@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Database Management Systems",
+    "code": "CS401",
+    "instructor": "Dr. Sharma",
+    "prerequisites": []
+  },
+  {
+    "title": "Computer Networks",
+    "code": "CS402",
+    "instructor": "Dr. Mehta",
+    "prerequisites": ["CS401"]
+  },
+  {
+    "title": "Operating Systems",
+    "code": "CS403",
+    "instructor": "Dr. Sharma",
+    "prerequisites": ["CS401"]
+  }
+]

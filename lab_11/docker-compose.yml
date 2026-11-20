@@ -1,0 +1,51 @@
+services:
+  configsvr:
+    image: mongo:7.0
+    container_name: lab11-configsvr
+    command: ["mongod", "--configsvr", "--replSet", "lab11-configRS", "--port", "27019", "--bind_ip_all"]
+    ports:
+      - "27119:27019"
+    volumes:
+      - lab11-config-data:/data/configdb
+    networks:
+      - lab11-network
+
+  shard1:
+    image: mongo:7.0
+    container_name: lab11-shard1
+    command: ["mongod", "--shardsvr", "--replSet", "lab11-shard1RS", "--port", "27018", "--bind_ip_all"]
+    volumes:
+      - lab11-shard1-data:/data/db
+    networks:
+      - lab11-network
+
+  shard2:
+    image: mongo:7.0
+    container_name: lab11-shard2
+    command: ["mongod", "--shardsvr", "--replSet", "lab11-shard2RS", "--port", "27018", "--bind_ip_all"]
+    volumes:
+      - lab11-shard2-data:/data/db
+    networks:
+      - lab11-network
+
+  mongos:
+    image: mongo:7.0
+    container_name: lab11-mongos
+    command: ["mongos", "--configdb", "lab11-configRS/lab11-configsvr:27019", "--bind_ip_all", "--port", "27017"]
+    ports:
+      - "27117:27017"
+    depends_on:
+      - configsvr
+      - shard1
+      - shard2
+    networks:
+      - lab11-network
+
+networks:
+  lab11-network:
+    driver: bridge
+
+volumes:
+  lab11-config-data:
+  lab11-shard1-data:
+  lab11-shard2-data:

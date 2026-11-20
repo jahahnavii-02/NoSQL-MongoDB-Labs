@@ -1,0 +1,8 @@
+[
+  {
+    "post_id": 1,
+    "title": "Post with 10,000 Comments",
+    "author": "Jahnavi",
+    "content": "This post demonstrates why embedding a very large number of comments can be problematic."
+  }
+]

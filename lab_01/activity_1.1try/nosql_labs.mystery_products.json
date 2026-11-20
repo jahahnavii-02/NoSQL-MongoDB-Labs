@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "6a91416a3e6e49aef7768c0d"
+  },
+  "name": "DynamoDB",
+  "family": "Key-Value / Document",
+  "hint": "AWS managed, single-digit ms latency, used for shopping carts"
+},
+{
+  "_id": {
+    "$oid": "6a91416a3e6e49aef7768c0e"
+  },
+  "name": "InfluxDB",
+  "family": "Wide-Column / Time-Series",
+  "hint": "Purpose-built for time-series data, SQL-like query language"
+},
+{
+  "_id": {
+    "$oid": "6a91416a3e6e49aef7768c0f"
+  },
+  "name": "OrientDB",
+  "family": "Multi-Model",
+  "hint": "Supports both document and graph models in one engine"
+}]

@@ -1,0 +1,40 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: ts-mongo
+    ports: ["27133:27017"]          # same host port your labs already use
+    volumes: ["mongo_data:/data/db"]
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ts-ollama
+    ports: ["11434:11434"]
+    volumes: ["ollama_data:/root/.ollama"]
+
+  backend:
+    build: .
+    container_name: ts-backend
+    ports: ["8000:8000"]
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/
+      - MONGO_DATABASE=threatsentry
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_CHAT_MODEL=${OLLAMA_CHAT_MODEL:-llama3.2:3b}
+      - OLLAMA_EMBED_MODEL=${OLLAMA_EMBED_MODEL:-mxbai-embed-large}
+      - SCANNER_MODE=local
+      - MITIGATION_DRY_RUN=${MITIGATION_DRY_RUN:-true}
+    depends_on: [mongo, ollama]
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: ts-frontend
+    ports: ["8501:8501"]
+    environment:
+      - THREATSENTRY_API=http://backend:8000
+    depends_on: [backend]
+
+volumes:
+  mongo_data:
+  ollama_data:

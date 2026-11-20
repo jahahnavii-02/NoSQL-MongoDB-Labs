@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "6a9ec5031ca30f7489e9d1e2"
+  },
+  "title": "Database Management Systems",
+  "code": "CS401",
+  "instructor": "Dr. Sharma",
+  "students": [
+    {
+      "name": "Rahul",
+      "id": "S101",
+      "grade": "A"
+    },
+    {
+      "name": "Priya",
+      "id": "S102",
+      "grade": "B+"
+    },
+    {
+      "name": "Arjun",
+      "id": "S103",
+      "grade": "A-"
+    }
+  ],
+  "schedule": {
+    "days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "time": "10:00 AM - 11:00 AM",
+    "room": "Room 201"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a9ec5031ca30f7489e9d1e3"
+  },
+  "title": "Computer Networks",
+  "code": "CS402",
+  "instructor": "Dr. Mehta",
+  "students": [
+    {
+      "name": "Sneha",
+      "id": "S104",
+      "grade": "A"
+    },
+    {
+      "name": "Vikram",
+      "id": "S105",
+      "grade": "B"
+    },
+    {
+      "name": "Ananya",
+      "id": "S106",
+      "grade": "A+"
+    }
+  ],
+  "schedule": {
+    "days": [
+      "Tuesday",
+      "Thursday"
+    ],
+    "time": "11:00 AM - 12:00 PM",
+    "room": "Room 202"
+  },
+  "prerequisites": [
+    "CS401"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a9ec5031ca30f7489e9d1e4"
+  },
+  "title": "Operating Systems",
+  "code": "CS403",
+  "instructor": "Dr. Sharma",
+  "students": [
+    {
+      "name": "Karan",
+      "id": "S107",
+      "grade": "B+"
+    },
+    {
+      "name": "Neha",
+      "id": "S108",
+      "grade": "A"
+    },
+    {
+      "name": "Aman",
+      "id": "S109",
+      "grade": "A-"
+    }
+  ],
+  "schedule": {
+    "days": [
+      "Monday",
+      "Friday"
+    ],
+    "time": "2:00 PM - 3:00 PM",
+    "room": "Room 203"
+  },
+  "prerequisites": [
+    "CS401"
+  ]
+}]

@@ -1,0 +1,120 @@
+[{
+  "_id": "THR001",
+  "title": "Ransomware Campaign",
+  "description": "A ransomware campaign targeting enterprise systems using malicious payloads and credential theft.",
+  "category": "Ransomware",
+  "severity": "Critical",
+  "publishedDate": {
+    "$date": "2026-09-20T00:00:00.000Z"
+  },
+  "source": {
+    "id": "SRC001",
+    "name": "CTI Digest",
+    "type": "Threat Intelligence"
+  },
+  "tags": [
+    "ransomware",
+    "malware",
+    "enterprise"
+  ],
+  "classification": {
+    "type": "Malware",
+    "confidence": 0.94
+  },
+  "indicators": [
+    {
+      "_id": "IOC001",
+      "type": "IP",
+      "value": "192.0.2.10",
+      "confidence": 90,
+      "status": "Malicious"
+    },
+    {
+      "_id": "IOC003",
+      "type": "HASH",
+      "value": "5d41402abc4b2a76b9719d911017c592",
+      "confidence": 95,
+      "status": "Malicious"
+    }
+  ]
+},
+{
+  "_id": "THR002",
+  "title": "Phishing Infrastructure",
+  "description": "A phishing campaign using malicious domains to collect user credentials.",
+  "category": "Phishing",
+  "severity": "High",
+  "publishedDate": {
+    "$date": "2026-09-22T00:00:00.000Z"
+  },
+  "source": {
+    "id": "SRC001",
+    "name": "CTI Digest",
+    "type": "Threat Intelligence"
+  },
+  "tags": [
+    "phishing",
+    "credential-theft",
+    "social-engineering"
+  ],
+  "classification": {
+    "type": "Phishing",
+    "confidence": 0.91
+  },
+  "indicators": [
+    {
+      "_id": "IOC002",
+      "type": "DOMAIN",
+      "value": "malicious-example.test",
+      "confidence": 85,
+      "status": "Malicious"
+    },
+    {
+      "_id": "IOC004",
+      "type": "URL",
+      "value": "https://example.test/payload",
+      "confidence": 88,
+      "status": "Suspicious"
+    }
+  ]
+},
+{
+  "_id": "THR003",
+  "title": "Malware Distribution Activity",
+  "description": "Malware distribution infrastructure was observed delivering malicious files to targeted systems.",
+  "category": "Malware",
+  "severity": "High",
+  "publishedDate": {
+    "$date": "2026-09-25T00:00:00.000Z"
+  },
+  "source": {
+    "id": "SRC002",
+    "name": "Security Research Source",
+    "type": "Security Research"
+  },
+  "tags": [
+    "malware",
+    "payload",
+    "distribution"
+  ],
+  "classification": {
+    "type": "Malware",
+    "confidence": 0.89
+  },
+  "indicators": [
+    {
+      "_id": "IOC003",
+      "type": "HASH",
+      "value": "5d41402abc4b2a76b9719d911017c592",
+      "confidence": 95,
+      "status": "Malicious"
+    },
+    {
+      "_id": "IOC004",
+      "type": "URL",
+      "value": "https://example.test/payload",
+      "confidence": 88,
+      "status": "Suspicious"
+    }
+  ]
+}]

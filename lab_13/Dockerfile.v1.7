@@ -1,0 +1,14 @@
+FROM jahnavii15/integrated-nosql-labs:1.6
+
+WORKDIR /app
+
+RUN mkdir -p /app/lab13/lab13.1-replica-set /app/lab13/lab13.2-kubernetes
+
+COPY lab13.1-replica-set/docker-compose.yml /app/lab13/lab13.1-replica-set/
+COPY lab13.1-replica-set/failover_test.py /app/lab13/lab13.1-replica-set/
+COPY lab13.2-kubernetes/mongo-headless.yaml /app/lab13/lab13.2-kubernetes/
+COPY lab13.2-kubernetes/mongo-statefulset.yaml /app/lab13/lab13.2-kubernetes/
+
+COPY README.v1.7.md /app/README.md
+
+CMD ["sh", "-c", "echo 'Integrated NoSQL Labs 1-13'; echo 'Previous labs are preserved under /app'; echo 'Lab 13 files are under /app/lab13'; echo 'Read /app/README.md for instructions'; exec tail -f /dev/null"]

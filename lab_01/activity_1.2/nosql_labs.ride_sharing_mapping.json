@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6a906bbccb7fc8fabcd7aded"
+  },
+  "data_domain": "Driver Locations",
+  "family": "Key-Value",
+  "database": "Redis",
+  "reason": "Frequently updated and read by driver ID"
+},
+{
+  "_id": {
+    "$oid": "6a906bbccb7fc8fabcd7adee"
+  },
+  "data_domain": "User Profiles",
+  "family": "Document",
+  "database": "MongoDB",
+  "reason": "Self-contained profiles with nested fields"
+},
+{
+  "_id": {
+    "$oid": "6a906bbccb7fc8fabcd7adef"
+  },
+  "data_domain": "Ride History",
+  "family": "Document / Wide-Column",
+  "database": "MongoDB / Cassandra",
+  "reason": "Append-only data queried by rider ID and date range"
+},
+{
+  "_id": {
+    "$oid": "6a906bbccb7fc8fabcd7adf0"
+  },
+  "data_domain": "Driver-Rider Relationships",
+  "family": "Graph",
+  "database": "Neo4j",
+  "reason": "Efficient traversal of relationships and connections"
+}]

@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Phishing Attacks",
+    "source": "Threat Intelligence 1",
+    "content": "Phishing is a social engineering attack in which attackers impersonate trusted organizations or individuals to steal credentials and sensitive information. Common methods include fraudulent emails, fake login pages, malicious links and attachments. Organizations should use multi-factor authentication, email filtering, security awareness training and domain monitoring to reduce phishing risks."
+  },
+  {
+    "title": "Ransomware Threats",
+    "source": "Threat Intelligence 2",
+    "content": "Ransomware is malicious software that encrypts files or disrupts systems and demands payment from victims. Attackers commonly gain access through phishing, exposed remote access services and vulnerable software. Regular offline backups, patch management, endpoint detection and incident response plans help reduce the impact of ransomware."
+  },
+  {
+    "title": "DDoS Attacks",
+    "source": "Threat Intelligence 3",
+    "content": "A distributed denial of service attack overwhelms a target server or network with traffic from multiple systems, making services unavailable. Botnets are frequently used to generate malicious traffic. Mitigation techniques include traffic filtering, rate limiting, content delivery networks and dedicated DDoS protection services."
+  },
+  {
+    "title": "SQL Injection",
+    "source": "Threat Intelligence 4",
+    "content": "SQL injection occurs when untrusted input is incorporated into database queries without proper validation or parameterization. Attackers may manipulate queries to access, modify or delete information. Prepared statements, input validation, least-privilege database accounts and secure coding practices help prevent SQL injection."
+  },
+  {
+    "title": "Insider Threats",
+    "source": "Threat Intelligence 5",
+    "content": "Insider threats involve employees, contractors or other trusted individuals who misuse authorized access intentionally or accidentally. Risks include data theft, unauthorized disclosure and sabotage. Organizations can reduce these risks through access controls, audit logging, user activity monitoring and security policies."
+  }
+]

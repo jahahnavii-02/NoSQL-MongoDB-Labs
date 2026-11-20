@@ -1,0 +1,7 @@
+concern,journal,requested,successful,total_seconds,average_ms,error
+w:1,False,1000,1000,4.2259,4.226,
+w:1,True,1000,1000,17.0303,17.03,
+w:majority,False,1000,1000,111.354,111.354,
+w:majority,True,1000,1000,25.8536,25.854,
+w:3,False,1000,1000,9.0678,9.068,
+w:3,True,1000,1000,24.6839,24.684,

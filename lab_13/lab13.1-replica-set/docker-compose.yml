@@ -1,0 +1,157 @@
+services:
+  # ==========================================
+  # 1. Prepare MongoDB Internal Authentication
+  # ==========================================
+  keyfile-init:
+    image: mongo:7.0
+    container_name: lab13-keyfile-init
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        set -e
+        cp /source/keyfile /shared/keyfile
+        chown 999:999 /shared/keyfile
+        chmod 400 /shared/keyfile
+        echo "MongoDB keyfile permissions configured"
+    volumes:
+      - ./keyfile:/source/keyfile:ro
+      - mongo-keyfile:/shared
+    restart: "no"
+
+  # ==========================================
+  # 2. MongoDB Node 1
+  # ==========================================
+  mongo1:
+    image: mongo:7.0
+    container_name: lab13-mongo1
+    hostname: mongo1
+    command:
+      - mongod
+      - --replSet
+      - rs0
+      - --keyFile
+      - /etc/mongo-keyfile/keyfile
+      - --bind_ip_all
+    ports:
+      - "27130:27017"
+    volumes:
+      - mongo1-data:/data/db
+      - mongo-keyfile:/etc/mongo-keyfile:ro
+    depends_on:
+      keyfile-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - mongosh
+        - --quiet
+        - --eval
+        - "db.adminCommand('ping').ok"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # ==========================================
+  # 3. MongoDB Node 2
+  # ==========================================
+  mongo2:
+    image: mongo:7.0
+    container_name: lab13-mongo2
+    hostname: mongo2
+    command:
+      - mongod
+      - --replSet
+      - rs0
+      - --keyFile
+      - /etc/mongo-keyfile/keyfile
+      - --bind_ip_all
+    ports:
+      - "27131:27017"
+    volumes:
+      - mongo2-data:/data/db
+      - mongo-keyfile:/etc/mongo-keyfile:ro
+    depends_on:
+      keyfile-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - mongosh
+        - --quiet
+        - --eval
+        - "db.adminCommand('ping').ok"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # ==========================================
+  # 4. MongoDB Node 3
+  # ==========================================
+  mongo3:
+    image: mongo:7.0
+    container_name: lab13-mongo3
+    hostname: mongo3
+    command:
+      - mongod
+      - --replSet
+      - rs0
+      - --keyFile
+      - /etc/mongo-keyfile/keyfile
+      - --bind_ip_all
+    ports:
+      - "27132:27017"
+    volumes:
+      - mongo3-data:/data/db
+      - mongo-keyfile:/etc/mongo-keyfile:ro
+    depends_on:
+      keyfile-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - mongosh
+        - --quiet
+        - --eval
+        - "db.adminCommand('ping').ok"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # ==========================================
+  # 5. Prometheus MongoDB Exporter
+  # ==========================================
+  prometheus-exporter:
+    image: percona/mongodb_exporter:0.53
+    container_name: lab13-mongodb-exporter-compose
+    environment:
+      MONGODB_URI: "mongodb://mongo1:27017/?authSource=admin"
+      MONGODB_USER: "${MONGODB_EXPORTER_USER:?Set exporter username}"
+      MONGODB_PASSWORD: "${MONGODB_EXPORTER_PASSWORD:?Set exporter password}"
+    ports:
+      - "9217:9216"
+    depends_on:
+      mongo1:
+        condition: service_healthy
+    restart: unless-stopped
+
+# ==========================================
+# Persistent Storage
+# ==========================================
+volumes:
+  mongo-keyfile:
+  mongo1-data:
+  mongo2-data:
+  mongo3-data:
+
+# ==========================================
+# Dedicated Network
+# ==========================================
+networks:
+  default:
+    name: lab13-replica-network

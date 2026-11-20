@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea7b"
+  },
+  "name": "Amazon S3",
+  "family": "Document/Column",
+  "data_model": "Object/Key-Value",
+  "vendor": "AWS",
+  "use_case": "Static asset storage, data lakes, backups",
+  "open_source": false
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea7c"
+  },
+  "name": "Couchbase",
+  "family": "Document",
+  "data_model": "JSON Document",
+  "vendor": "Couchbase Inc.",
+  "use_case": "Session management, caching layer, user profiles",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea7d"
+  },
+  "name": "Apache HBase",
+  "family": "Wide-Column",
+  "data_model": "Column-Family",
+  "vendor": "Apache",
+  "use_case": "Time-series logs, streaming, big data analytics",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea7e"
+  },
+  "name": "Amazon Neptune",
+  "family": "Graph",
+  "data_model": "Property Graph / RDF",
+  "vendor": "AWS",
+  "use_case": "Knowledge graphs and relationship analysis",
+  "open_source": false
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea7f"
+  },
+  "name": "Memcached",
+  "family": "Key-Value",
+  "data_model": "Key-Value",
+  "vendor": "Open Source",
+  "use_case": "In-memory caching",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea80"
+  },
+  "name": "Redis",
+  "family": "Key-Value",
+  "data_model": "Key-Value / Data Structures",
+  "vendor": "Redis",
+  "use_case": "Caching, sessions, real-time analytics",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea81"
+  },
+  "name": "MongoDB",
+  "family": "Document",
+  "data_model": "JSON/BSON Document",
+  "vendor": "MongoDB Inc.",
+  "use_case": "Flexible application data and content management",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea82"
+  },
+  "name": "Apache Cassandra",
+  "family": "Wide-Column",
+  "data_model": "Column-Family",
+  "vendor": "Apache",
+  "use_case": "High-volume writes and distributed data",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea83"
+  },
+  "name": "Neo4j",
+  "family": "Graph",
+  "data_model": "Property Graph",
+  "vendor": "Neo4j",
+  "use_case": "Recommendation systems and relationship analysis",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a9072475787b7f5b345ea84"
+  },
+  "name": "Elasticsearch",
+  "family": "Document",
+  "data_model": "JSON Document",
+  "vendor": "Elastic",
+  "use_case": "Search, logging and analytics",
+  "open_source": true
+}]

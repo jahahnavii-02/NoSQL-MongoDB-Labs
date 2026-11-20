@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6a906ce890071038d524c456"
+  },
+  "data_domain": "Product Catalog",
+  "family": "Document",
+  "database": "MongoDB",
+  "reason": "Flexible product documents with different attributes"
+},
+{
+  "_id": {
+    "$oid": "6a906ce890071038d524c457"
+  },
+  "data_domain": "Shopping Cart",
+  "family": "Key-Value",
+  "database": "Redis",
+  "reason": "Fast access using customer or cart ID"
+},
+{
+  "_id": {
+    "$oid": "6a906ce890071038d524c458"
+  },
+  "data_domain": "Order History",
+  "family": "Wide-Column",
+  "database": "Apache Cassandra",
+  "reason": "High-volume writes and queries by customer and time"
+},
+{
+  "_id": {
+    "$oid": "6a906ce890071038d524c459"
+  },
+  "data_domain": "Product Recommendations",
+  "family": "Graph",
+  "database": "Neo4j",
+  "reason": "Efficiently represents relationships between users and products"
+}]
