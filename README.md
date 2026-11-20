@@ -34,35 +34,42 @@ Each lab_XX folder contains README.md + code/ + output/
 
 ## Lab Mapping
 
-lab_01 - Basic NoSQL operations
-lab_02 - Database and document operations
-lab_03 - MongoDB fundamentals
-lab_04 - Database operations and queries
-lab_05 - Data modelling and CRUD
-lab_06 - Advanced database activities
-lab_07 - MongoDB laboratory exercises
-lab_08 - Replication and replica sets
-lab_09 - Database implementation and integration
-lab_10 - Transactions and inventory management
-lab_11 - Sharding and distributed data
-lab_12 - Security, RBAC and TLS
-lab_13 - Advanced NoSQL implementation
-lab_14 - Advanced database concepts
-lab_15 - Multi-tenant API and tenant migration
-lab_16 - Hybrid NoSQL implementation
-lab_17 - Integrated NoSQL application
-lab_18 - Comparative NoSQL Threat Intelligence
+| Lab | Title | Folder |
+| --- | --- | --- |
+| Lab 01 | Introduction to NoSQL | lab_01/ |
+| Lab 02 | MongoDB Setup & Basics | lab_02/ |
+| Lab 03 | MongoDB CRUD Operations | lab_03/ |
+| Lab 04 | MongoDB Query Operators | lab_04/ |
+| Lab 05 | MongoDB Aggregation Pipeline | lab_05/ |
+| Lab 06 | MongoDB Indexing & Performance | lab_06/ |
+| Lab 07 | Cassandra Setup & Basics | lab_07/ |
+| Lab 08 | Cassandra CQL & Tables | lab_08/ |
+| Lab 09 | Cassandra Query-Oriented Modelling | lab_09/ |
+| Lab 10 | Neo4j Setup & Basics | lab_10/ |
+| Lab 11 | Cypher Queries | lab_11/ |
+| Lab 12 | Graph Relationships & Threat Modelling | lab_12/ |
+| Lab 13 | MongoDB + Python Integration | lab_13/ |
+| Lab 14 | Cassandra + Python Integration | lab_14/ |
+| Lab 15 | Neo4j + Python Integration | lab_15/ |
+| Lab 16 | Multi-Database Integration | lab_16/ |
+| Lab 17 | ThreatSentry Prototype | lab_17/ |
+| Lab 18 | Final Integration & Reports | lab_18/ |
+| Mini Project | ThreatSentry AI | mini-project/ThreatSentry/ |
 
 ---
 
 ## Prerequisites
 
-- Python 3.11+ - Lab scripts
-- MongoDB 7.0+ - Primary database
-- Docker Latest - Container-based labs
-- mongosh 2.0+ - Shell scripts
-- Cassandra Latest - Polyglot labs (16, 18)
-- Neo4j Latest - Graph labs (16, 18)
+| Requirement | Details |
+| --- | --- |
+| OS | Windows 10 / 11, Linux, or macOS |
+| Docker | Docker Desktop / Docker Engine |
+| Docker Compose | v2 or later |
+| Git | To clone the repository |
+| RAM | 8 GB minimum, 16 GB recommended |
+| Disk Space | 10 GB free space |
+| Browser | Chrome / Edge for dashboard |
+| Python | 3.10+ (for local testing, optional) |
 
 ---
 
@@ -91,8 +98,8 @@ Ingestion + Linux Agent -> FastAPI -> MongoDB | Cassandra | Neo4j -> Dashboard
 - Neo4j - Threat to Source to Target graph
 - FastAPI + Dashboard - API and visualisation
 
-Source: mini-project/ThreatSentry/
-Full report: reports/Mini_Project_Report_ThreatSentry_AI.pdf
+Source: [mini-project/ThreatSentry/](mini-project/ThreatSentry/)
+Full report: [Mini Project - ThreatSentry AI Report](reports/Mini_Project_Report_ThreatSentry_AI.pdf)
 
 ---
 
@@ -105,7 +112,6 @@ No .env, API keys, JWT secrets, private keys, certs, or backups are committed. S
 ## Docker Images
 
 Current Image: jahnavii15/integrated-nosql-labs:2.3
-Tag 1.9 is deprecated. Use Docker 2.3 only.
 
 Main labs image:
 docker pull jahnavii15/integrated-nosql-labs:2.3
@@ -119,8 +125,11 @@ docker pull jahnavii15/threatsentry
 
 ## Reports
 
-Lab Experiments 01-18:
-reports/Lab_Experiments_Report_Chapters_1-18.pdf
+- [Lab Experiments 01-18 Report](reports/Lab_Experiments_Report_Chapters_1-18.pdf)
+- [Mini Project - ThreatSentry AI Report](reports/Mini_Project_Report_ThreatSentry_AI.pdf)
 
-Mini Project - ThreatSentry AI:
-reports/Mini_Project_Report_ThreatSentry_AI.pdf
+## Docker
+
+[![Docker Image](https://img.shields.io/docker/pulls/jahnavii15/integrated-nosql-labs)](https://hub.docker.com/r/jahnavii15/integrated-nosql-labs)
+
+- [View on Docker Hub](https://hub.docker.com/r/jahnavii15/integrated-nosql-labs)
